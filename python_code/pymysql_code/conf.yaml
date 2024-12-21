@@ -1,0 +1,9 @@
+database:
+  host: localhost
+  user: root
+  password: ren123...
+  database: rxy
+  charset: utf8mb4
+  maxconnections: 10
+  mincached: 2
+  maxcached: 5
