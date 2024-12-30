@@ -10,8 +10,6 @@ from calculator_case.utils import DriverUtils
 from calculator_case.calculator_service import CalculatorService
 from calculator_case.build_data import build_data
 
-
-
 class TestCalculator:
 
     def setup_class(self):
@@ -24,6 +22,10 @@ class TestCalculator:
     @pytest.mark.parametrize("num1, num2, expect", build_data())
     def test_add(self, num1, num2, expect):
         print("num1:{}, num2:{}, expect:{}", num1, num2, expect)
+        self.CalculatorService.add(num1, num2)
+
+        result = self.CalculatorService.get_result()
+        assert result == expect
         pass
 
     def test_sub(self):
